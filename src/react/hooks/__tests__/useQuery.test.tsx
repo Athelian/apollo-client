@@ -218,7 +218,6 @@ describe("useQuery Hook", () => {
                   for (let i = 0; i < incoming.length; i++) {
                     ret[(x.args?.offset ?? 0) + i] = incoming[i];
                   }
-                  console.debug(ret);
                   return ret;
                 },
               },
@@ -317,7 +316,7 @@ describe("useQuery Hook", () => {
       expect(result.current.data).toEqual({
         letters: ab.concat(cd),
       });
-    }, 10000);
+    });
   });
 
   it("should be cleared when variables change causes cache miss", async () => {
